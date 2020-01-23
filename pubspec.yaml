@@ -34,6 +34,7 @@ dev_dependencies:
   firebase_storage:
   firebase_database:
   cloud_firestore:
+  google_sign_in:
   flutter_bloc: 
   equatable: 
   meta:

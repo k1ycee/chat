@@ -1,45 +1,26 @@
+import 'package:chat/pages/auth_page/login_page.dart';
+import 'package:chat/pages/auth_page/register_page.dart';
+import 'package:chat/pages/chat_area/chat_screen.dart';
+import 'package:chat/pages/splash/splash_page.dart';
+import 'package:chat/pages/splash/splashbuttons.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() => runApp(MyApp());
-
 class MyApp extends StatelessWidget {
-   @override
+  static const String id = "LANDING";
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      home: MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        title: Text("Chit Chat", style: TextStyle(color: Colors.green, fontSize: 20, fontWeight: FontWeight.w300),),
-        centerTitle: true,
-        elevation: 0,
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-                 "Please A chat app wants to be here Please",
-                 style: TextStyle(color: Colors.green),
-            ),
-          ],
-        ),
-      ),
+      theme: ThemeData.dark(),
+      initialRoute: Splash.id,
+      routes: {
+        Splash.id: (context) => Splash(),
+        Chat.id: (context) => Chat(),
+        Register.id: (context) => Register(),
+        Login.id: (context) => Login()
+      },
     );
   }
 }
